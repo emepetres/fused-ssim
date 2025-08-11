@@ -28,7 +28,7 @@ detected_arch = None
 cuda_archs_env = os.environ.get('CUDA_ARCHITECTURES')
 if cuda_archs_env:
     try:
-        archs = [arch.strip() for arch in cuda_archs_env.split(',')]
+        archs = [arch.strip() for arch in cuda_archs_env.split(';')]
         env_msg = f"Using CUDA architectures from environment: {archs}"
         print(env_msg)
         print(env_msg, file=sys.stderr, flush=True)
